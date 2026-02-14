@@ -1,0 +1,16 @@
+# Oordio - Allow search engines and AI crawlers
+User-agent: *
+Allow: /
+
+# Explicit allowance for AI crawlers (maximum visibility)
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: CCBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://oordio.com/sitemap.xml

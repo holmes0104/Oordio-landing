@@ -1,0 +1,34 @@
+# Oordio
+
+> Oordio connects your bookings, cleaners, payments, and schedules into one calm, automated system for short-term rental operators. Stop chasing cleaners. Start running your rentals.
+
+## Core Pages
+
+- [Home](https://oordio.com/): Cleaning coordination for Airbnb hosts, fully automated
+- [How It Works](https://oordio.com/#how-it-works): Auto-detection, scheduling, smart matching, hands-free monitoring
+- [Features](https://oordio.com/#advantages): Oordio Auto-Dispatch, contextual alerts, live job tracking, unified calendar
+- [Pricing](https://oordio.com/#pricing): Starter (€19), Pro (€39), Business (€99) — 15-day free trial
+- [Get Started](https://app.oordio.com): Sign up for Oordio
+
+## Blog & Resources
+
+- [Blog](https://oordio.com/blog/): Tips, guides, and insights for hosts and cleaning professionals
+- [Complete Feature Guide](https://oordio.com/blog/oordio-complete-feature-guide.html)
+- [Assignment Ladder Explained](https://oordio.com/blog/how-oordio-assignment-ladder-works.html)
+- [Benefits for Airbnb Hosts](https://oordio.com/blog/benefits-of-oordio-for-airbnb-hosts.html)
+- [Payments & Payouts](https://oordio.com/blog/payments-and-payouts-how-oordio-handles-money.html)
+- [Backup Cleaner Strategy](https://oordio.com/blog/backup-cleaner-strategy.html)
+- [Automate Airbnb Turnaround](https://oordio.com/blog/automate-airbnb-turnaround.html)
+- [Cleaning Professional Tips](https://oordio.com/blog/cleaning-professional-tips.html)
+- [Scale Your Portfolio](https://oordio.com/blog/scale-short-term-portfolio.html)
+
+## What Oordio Does
+
+- **For hosts**: Auto-assigns primary, backup, and marketplace cleaners; syncs Airbnb/VRBO/iCal; unified calendar; automated payouts; portfolio dashboards
+- **For cleaners**: Push notifications for jobs; one-tap accept; photo verification; automatic payouts
+- **Pricing**: Starter (3 properties), Pro (10 properties), Business (unlimited)
+
+## Contact
+
+- App: https://app.oordio.com
+- Sales: sales@oordio.com
