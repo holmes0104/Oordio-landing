@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Oordio connects your bookings, cleaners, payments, and schedules into one calm, automated system. Stop chasing cleaners. Start running your rentals." />
+    <title>Oordio — Free Your Time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Icon sprite (Lucide-style) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <symbol id="icon-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="icon-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+      <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+      <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+      <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+      <symbol id="icon-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><circle cx="17" cy="14" r="2"/></symbol>
+      <symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+      <symbol id="icon-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
+      <symbol id="icon-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8H8"/><path d="M16 12H8"/><path d="M16 16H8"/></symbol>
+      <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+      <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></symbol>
+    </svg>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="logo"><img src="assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+        <ul class="nav-links">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#advantages">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="https://app.oordio.com" class="nav-cta">Get Started</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-image" role="presentation"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title" data-hero-animate>
+            Cleaning Coordination.<br />
+            <span class="hero-highlight">Fully Automated.</span>
+          </h1>
+          <p class="hero-desc" data-hero-animate>
+            Oordio connects your bookings, cleaners, payments, and schedules into one calm, automated system — so nothing falls through the cracks.
+          </p>
+          <div class="hero-ctas" data-hero-animate>
+            <a href="https://app.oordio.com" class="btn btn-primary">
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Start Free 30-Day Trial
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+          </div>
+          <p class="hero-microcopy" data-hero-animate>No credit card required.</p>
+          <ul class="hero-bullets" data-hero-animate>
+            <li><svg><use href="#icon-sync"/></svg> Auto-assign cleaners</li>
+            <li><svg><use href="#icon-check-circle"/></svg> Real-time job confirmations</li>
+            <li><svg><use href="#icon-wallet"/></svg> Automatic payout tracking</li>
+          </ul>
+          <p class="hero-trust" data-hero-animate>Built for modern short-term rental operators.</p>
+        </div>
+        <div class="hero-mockup" data-hero-animate>
+          <div class="hero-mockup-frame">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Oordio dashboard — booking to cleaner to confirmed flow" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Stats (based on 15 bookings/month, 10 min coordination/booking) -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card stat-card-blue" data-animate>
+            <div class="stat-icon"><svg><use href="#icon-check-circle"/></svg></div>
+            <span class="stat-value" data-count="2.5" data-decimal>0</span><span class="stat-suffix"> hrs</span>
+            <p class="stat-label">Saved per property/month</p>
+          </div>
+          <div class="stat-card stat-card-green" data-animate>
+            <div class="stat-icon"><svg><use href="#icon-users"/></svg></div>
+            <span class="stat-value" data-count="25">0</span><span class="stat-suffix"> hrs</span>
+            <p class="stat-label">For 10-property hosts (3 working days)</p>
+          </div>
+          <div class="stat-card stat-card-amber" data-animate>
+            <div class="stat-icon"><svg><use href="#icon-zap"/></svg></div>
+            <span class="stat-value" data-count="11">0</span><span class="stat-suffix">x</span>
+            <p class="stat-label">ROI on Pro plan</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operate With Calm Confidence -->
+    <section class="section calm-confidence" id="calm-confidence">
+      <div class="container">
+        <header class="calm-header" data-animate>
+          <h2 class="calm-title">Operate With Calm Confidence</h2>
+          <p class="calm-subtitle">Oordio removes the mental load of cleaning coordination — so you can focus on growing, not chasing.</p>
+        </header>
+
+        <div class="calm-layout">
+          <div class="calm-benefits" data-animate>
+            <article class="calm-card">
+              <h3>Calm Before Every Check-In</h3>
+              <p>No more late-night confirmation messages. Every booking turns into a confirmed workflow automatically.</p>
+            </article>
+            <article class="calm-card">
+              <h3>Operational Certainty</h3>
+              <p>Know exactly what is happening, who is responsible, and what's completed — at any time.</p>
+            </article>
+            <article class="calm-card">
+              <h3>Less Mental Noise</h3>
+              <p>Stop replaying tasks in your head. No unfinished coordination loops.</p>
+            </article>
+            <article class="calm-card">
+              <h3>Professional Control</h3>
+              <p>Feel like you're running a system — not reacting to messages.</p>
+            </article>
+            <article class="calm-card">
+              <h3>Freedom to Disconnect</h3>
+              <p>Travel, sleep, or focus on growth without checking your phone constantly.</p>
+            </article>
+          </div>
+          <div class="calm-visual" data-animate>
+            <div class="calm-visual-frame">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="" role="presentation" />
+            </div>
+          </div>
+        </div>
+
+        <p class="calm-close" data-animate>Stop coordinating. Start operating.</p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title" data-animate>How Oordio Orchestrates Your Business</h2>
+        <p class="section-subtitle" data-animate>
+          A dual-sided ecosystem designed to remove manual coordination from the equation
+        </p>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="owners">For Portfolio Owners</button>
+          <button class="tab" data-tab="cleaners">For Cleaning Professionals</button>
+        </div>
+
+        <div class="tab-panels">
+          <div class="tab-panel active" id="owners">
+            <div class="steps-grid">
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-blue"><svg><use href="#icon-sync"/></svg></div>
+                <span class="step-num">1</span>
+                <h3>Auto-Detection</h3>
+                <p>Oordio syncs with your PM systems to instantly detect check-outs and gaps</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-green"><svg><use href="#icon-calendar"/></svg></div>
+                <span class="step-num">2</span>
+                <h3>Instant Scheduling</h3>
+                <p>Jobs are generated automatically based on your property-specific cleaning protocols</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-amber"><svg><use href="#icon-users"/></svg></div>
+                <span class="step-num">3</span>
+                <h3>Smart Matching</h3>
+                <p>Oordio assigns the best cleaner from your pool, or finds a backup instantly</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-purple"><svg><use href="#icon-monitor"/></svg></div>
+                <span class="step-num">4</span>
+                <h3>Hands-Free Monitoring</h3>
+                <p>Watch your portfolio sparkle through the dashboard without making a single call</p>
+              </article>
+            </div>
+          </div>
+          <div class="tab-panel" id="cleaners">
+            <div class="steps-grid">
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-blue"><svg><use href="#icon-bell"/></svg></div>
+                <span class="step-num">1</span>
+                <h3>Smart Alerts</h3>
+                <p>Cleaners receive Oordio push notifications for jobs that fit their exact location</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-green"><svg><use href="#icon-check-circle"/></svg></div>
+                <span class="step-num">2</span>
+                <h3>One-Tap Accept</h3>
+                <p>View checklist, access codes, and photos directly within the Oordio app</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-amber"><svg><use href="#icon-camera"/></svg></div>
+                <span class="step-num">3</span>
+                <h3>Photo Verification</h3>
+                <p>Upload completion photos to Oordio for instant host peace of mind</p>
+              </article>
+              <article class="step-card" data-animate>
+                <div class="step-icon step-icon-purple"><svg><use href="#icon-wallet"/></svg></div>
+                <span class="step-num">4</span>
+                <h3>Auto-Payouts</h3>
+                <p>No more invoicing; Oordio processes your payment as soon as the job is approved</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="section advantages" id="advantages">
+      <div class="container">
+        <h2 class="section-title" data-animate>The Oordio Advantage</h2>
+        <p class="section-subtitle" data-animate>
+          Tools built specifically for the high-stakes world of short-term rental cleaning
+        </p>
+
+        <div class="advantages-grid">
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-blue"><svg><use href="#icon-send"/></svg></div>
+            <h3>Oordio Auto-Dispatch</h3>
+            <p>Eliminate manual texts. Oordio automatically offers jobs to your primary crew, then escalates to vetted backups if needed.</p>
+          </article>
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-green"><svg><use href="#icon-bell"/></svg></div>
+            <h3>Contextual Alerts</h3>
+            <p>Receive real-time notifications via Oordio when a cleaner enters a property or when a guest extends their stay.</p>
+          </article>
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-amber"><svg><use href="#icon-activity"/></svg></div>
+            <h3>Live Job Tracking</h3>
+            <p>Track progress in the Oordio app: Offered → Accepted → On-Site → Verification Required → Completed.</p>
+          </article>
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-purple"><svg><use href="#icon-calendar"/></svg></div>
+            <h3>The Oordio Unified Calendar</h3>
+            <p>Sync Airbnb, VRBO, and direct bookings into one Oordio view that shows cleaning status alongside occupancy.</p>
+          </article>
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-rose"><svg><use href="#icon-layout"/></svg></div>
+            <h3>Portfolio Dashboards</h3>
+            <p>Multi-property management simplified. Oordio provides a birds-eye view of your entire operation's hygiene metrics.</p>
+          </article>
+          <article class="advantage-card" data-animate>
+            <div class="advantage-icon advantage-icon-blue"><svg><use href="#icon-receipt"/></svg></div>
+            <h3>Oordio Ledger & Payments</h3>
+            <p>Automated billing per cleaning. Oordio handles the math and the transactions, ensuring your pros are paid on time.</p>
+          </article>
+        </div>
+
+        <div class="control-center" data-animate>
+          <h3>The Control Center</h3>
+          <p>Total coordination, zero manual effort with Oordio</p>
+          <a href="https://app.oordio.com" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="value-roi" data-animate>
+          <h3>Value for a 5-Property Operator</h3>
+          <p class="value-assumptions">Based on 15 bookings/month per property, 10 min coordination per booking, and automated payouts.</p>
+          <div class="value-breakdown">
+            <div class="value-row"><span>Time savings</span><span>€375/mo</span></div>
+            <div class="value-row"><span>Payment automation</span><span>€37/mo</span></div>
+            <div class="value-row"><span>Mistake risk avoided</span><span>€75/mo</span></div>
+            <div class="value-row value-total"><span>Estimated value</span><span>≈ €487/mo</span></div>
+            <div class="value-row value-cost"><span>Pro plan cost</span><span>€39/mo</span></div>
+            <div class="value-row value-net"><span>Net benefit</span><span>≈ €448/mo</span></div>
+          </div>
+          <p class="value-roi-note">~11× ROI. Oordio can also delay hiring a VA (€800–1,200/mo) by 6–12 months—€4,800–€14,400 preserved. Cleaners handling 100 jobs/month save ~8 hours on communication and ~1.25 hours on payment reconciliation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title" data-animate>Scale Your Portfolio with Oordio</h2>
+        <p class="section-subtitle" data-animate>
+          Transparent plans designed to save you time and increase your guest satisfaction
+        </p>
+        <p class="pricing-trial-note" data-animate>30-day Pro trial — no credit card required</p>
+
+        <div class="pricing-toggle" data-animate>
+          <span class="toggle-label">Monthly</span>
+          <button class="toggle" id="pricing-toggle" role="switch" aria-checked="false">
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          </button>
+          <span class="toggle-label">Yearly <em>Save 17%</em></span>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card" data-animate>
+            <div class="pricing-icon pricing-icon-blue"><svg><use href="#icon-home"/></svg></div>
+            <h3>Starter</h3>
+            <p class="pricing-desc">Get started with primary auto-assignment and payment automation for up to 3 properties.</p>
+            <div class="pricing-price">
+              <span class="price monthly">€19</span>
+              <span class="price yearly">€16</span>
+              <span class="price-period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>Primary auto-assignment</li>
+              <li>Assignment reminders</li>
+              <li>Auto payment capture</li>
+              <li>Auto payouts to cleaner</li>
+              <li>Web & mobile app access</li>
+              <li>Unified property calendar</li>
+              <li>Up to 3 properties</li>
+            </ul>
+            <a href="https://app.oordio.com" class="btn btn-outline">Start Free Trial</a>
+          </article>
+
+          <article class="pricing-card featured" data-animate>
+            <span class="badge">Best for Teams</span>
+            <div class="pricing-icon pricing-icon-green"><svg><use href="#icon-zap"/></svg></div>
+            <h3>Pro</h3>
+            <p class="pricing-desc">Full automation: primary, backup, and marketplace. Interval cleanings and analytics.</p>
+            <div class="pricing-price">
+              <span class="price monthly">€39</span>
+              <span class="price yearly">€33</span>
+              <span class="price-period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>Everything in Starter</li>
+              <li>Backup assignment ladder</li>
+              <li>Marketplace escalation</li>
+              <li>Auto reassignment</li>
+              <li>Interval cleanings</li>
+              <li>Advanced analytics</li>
+              <li>Up to 10 properties</li>
+            </ul>
+            <a href="https://app.oordio.com" class="btn btn-primary">Start 30-Day Pro Trial</a>
+            <p class="pricing-card-trial">No credit card required</p>
+          </article>
+
+          <article class="pricing-card" data-animate>
+            <div class="pricing-icon pricing-icon-purple"><svg><use href="#icon-sparkles"/></svg></div>
+            <h3>Business</h3>
+            <p class="pricing-desc">Everything in Pro plus unlimited properties, team access, exports, and API.</p>
+            <div class="pricing-price">
+              <span class="price monthly">€99</span>
+              <span class="price yearly">€83</span>
+              <span class="price-period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>Everything in Pro</li>
+              <li>Multi-user access</li>
+              <li>Financial exports</li>
+              <li>API access</li>
+              <li>Unlimited properties</li>
+            </ul>
+            <a href="mailto:sales@oordio.com" class="btn btn-outline">Contact Oordio Sales</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title" data-animate>The Oordio Community</h2>
+        <p class="section-subtitle" data-animate>
+          Join hosts and professionals who have automated their coordination
+        </p>
+
+        <div class="testimonials-bubbles">
+          <blockquote class="testimonial-bubble" data-animate>
+            <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=96&h=96&fit=crop" alt="Sarah Mitchell" /></div>
+            <p class="testimonial-quote">"Oordio has completely removed the stress of coordinating turnarounds. I used to spend hours texting cleaners every Sunday; now, Oordio handles it all while I sleep. It's a game-changer for anyone looking to scale."</p>
+            <footer>
+              <strong>Sarah Mitchell</strong>
+              <span>Portfolio Owner</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-bubble" data-animate>
+            <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop" alt="Marcus Johnson" /></div>
+            <p class="testimonial-quote">"Working with Oordio hosts is so much better. I get notifications for new jobs instantly, the checklists are always clear, and the payments are processed automatically. I can focus on doing a great job instead of chasing money."</p>
+            <footer>
+              <strong>Marcus Johnson</strong>
+              <span>Oordio-Certified Cleaner</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-bubble" data-animate>
+            <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654936?w=96&h=96&fit=crop" alt="Emily Rodriguez" /></div>
+            <p class="testimonial-quote">"The coordination logic in Oordio is incredibly robust. Our operations team can finally focus on guest relations because the cleaning logistics are virtually self-managing. The fallback cleaner system is a lifesaver."</p>
+            <footer>
+              <strong>Emily Rodriguez</strong>
+              <span>Operations Manager</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-bubble" data-animate>
+            <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop" alt="Alex Chen" /></div>
+            <p class="testimonial-quote">"Finally got my weekends back. No more Sunday evening panic about who's cleaning Monday."</p>
+            <footer>
+              <strong>Alex Chen</strong>
+              <span>Host</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-bubble" data-animate>
+            <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop" alt="Jordan Williams" /></div>
+            <p class="testimonial-quote">"Payments are instant. No more chasing invoices or waiting weeks. I just do the job and get paid."</p>
+            <footer>
+              <strong>Jordan Williams</strong>
+              <span>Cleaner</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section blog" id="blog">
+      <div class="container">
+        <h2 class="section-title" data-animate>From the Oordio Blog</h2>
+        <p class="section-subtitle" data-animate>
+          Tips, guides, and insights for hosts and cleaning professionals
+        </p>
+
+        <div class="blog-grid">
+          <article class="blog-card" data-animate>
+            <a href="blog/oordio-complete-feature-guide.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-guides">Guides</span>
+              <h3>What Oordio Can Do: The Complete Feature Guide</h3>
+              <p>Everything you need to know about Oordio's capabilities: booking sync, auto-assignment, checklists, payments, and more.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" data-animate>
+            <a href="blog/how-oordio-assignment-ladder-works.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-strategy">Strategy</span>
+              <h3>How the Oordio Assignment Ladder Works</h3>
+              <p>Primary, backup, marketplace—a deep dive into the relationship-first automation that keeps turnarounds covered.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" data-animate>
+            <a href="blog/benefits-of-oordio-for-airbnb-hosts.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-growth">Growth</span>
+              <h3>7 Benefits of Oordio for Airbnb Hosts</h3>
+              <p>Save time, reduce stress, protect reviews, and scale your portfolio. Why hosts are switching to Oordio.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" data-animate>
+            <a href="blog/payments-and-payouts-how-oordio-handles-money.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-guides">Guides</span>
+              <h3>Payments & Payouts: How Oordio Handles the Money</h3>
+              <p>Stripe integration, auto capture, auto payouts to cleaners—from job completion to cleaner payment.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card blog-card-more" data-animate>
+            <a href="blog/backup-cleaner-strategy.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-strategy">Strategy</span>
+              <h3>Why Every Host Needs a Backup Cleaner</h3>
+              <p>Primary cleaner unavailable? A backup strategy prevents last-minute scrambles and protects your reviews.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card blog-card-more" data-animate>
+            <a href="blog/cleaning-professional-tips.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-cleaners">For Cleaners</span>
+              <h3>5 Tips for Cleaning Professionals Working with Short-Term Rentals</h3>
+              <p>Turnaround cleaning is different. Here’s how to work efficiently, get paid on time, and build lasting host relationships.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card blog-card-more" data-animate>
+            <a href="blog/scale-short-term-portfolio.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-growth">Growth</span>
+              <h3>Scaling Your Short-Term Rental Portfolio Without the Headache</h3>
+              <p>Adding more properties shouldn’t mean more spreadsheets. How to grow your portfolio while keeping operations lean.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card blog-card-more" data-animate>
+            <a href="blog/automate-airbnb-turnaround.html" class="blog-card-link">
+              <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80')"></div>
+              <div class="blog-card-content">
+              <span class="blog-category blog-category-guides">Guides</span>
+              <h3>How to Automate Your Airbnb Turnaround Cleaning</h3>
+              <p>Stop chasing cleaners by text. Learn how automation can cut coordination time by 90% and keep your properties guest-ready.</p>
+              <span class="blog-read">Read more →</span>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="blog-cta" data-animate>
+          <button type="button" class="btn btn-secondary" id="blog-load-more" aria-expanded="false">Load more</button>
+          <a href="blog/index.html" class="btn btn-primary">View All Posts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="section app-download">
+      <div class="container">
+        <h2 class="section-title" data-animate>Oordio Web & Mobile App</h2>
+        <h3 class="app-subtitle" data-animate>Coordination at Your Fingertips</h3>
+        <p class="section-subtitle app-desc" data-animate>
+          Use Oordio in your browser at app.oordio.com or download the mobile app. Stay connected to your property operations 24/7—whether you're a host monitoring status or a pro managing your route.
+        </p>
+
+        <div class="app-mockups" data-animate>
+          <div class="app-mockup app-mockup-web">
+            <div class="app-mockup-frame app-mockup-browser">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Oordio web app dashboard" />
+            </div>
+            <span class="app-mockup-label">Web App</span>
+          </div>
+          <div class="app-mockup app-mockup-mobile">
+            <div class="app-mockup-frame app-mockup-phone">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Oordio mobile app" />
+            </div>
+            <span class="app-mockup-label">Mobile App</span>
+          </div>
+        </div>
+        <div class="app-features">
+          <div class="app-feature" data-animate>
+            <div class="app-feature-icon app-feature-icon-blue"><svg><use href="#icon-bell"/></svg></div>
+            <h4>Oordio Alerts</h4>
+            <p>Instant job notifications and property status updates</p>
+          </div>
+          <div class="app-feature" data-animate>
+            <div class="app-feature-icon app-feature-icon-green"><svg><use href="#icon-map-pin"/></svg></div>
+            <h4>GPS Check-ins</h4>
+            <p>Know exactly when your Oordio pros are on-site</p>
+          </div>
+          <div class="app-feature" data-animate>
+            <div class="app-feature-icon app-feature-icon-amber"><svg><use href="#icon-calendar"/></svg></div>
+            <h4>Live Schedules</h4>
+            <p>Manage your Oordio coordination queue from anywhere</p>
+          </div>
+          <div class="app-feature" data-animate>
+            <div class="app-feature-icon app-feature-icon-purple"><svg><use href="#icon-check-circle"/></svg></div>
+            <h4>Digital Checklists</h4>
+            <p>Standardize quality across your entire portfolio</p>
+          </div>
+        </div>
+
+        <div class="app-badges" data-animate>
+          <a href="https://app.oordio.com" class="store-badge store-badge-primary" aria-label="Open Oordio Web App">
+            <span>Open Web App</span>
+          </a>
+          <a href="#" class="store-badge" aria-label="Download on the App Store">
+            <span>App Store</span>
+          </a>
+          <a href="#" class="store-badge" aria-label="Get it on Google Play">
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="#" class="logo"><img src="assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+          <p class="footer-tagline">Free your time with next-gen rental cleaning coordination.</p>
+          <div class="footer-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#advantages">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="blog/index.html">Blog</a>
+            <a href="https://app.oordio.com">Get Started</a>
+          </div>
+          <p class="footer-copy">&copy; Oordio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A complete guide to Oordio's features: booking sync, auto-assignment, checklists, payments, marketplace, and more for short-term rental hosts." />
+    <title>What Oordio Can Do: The Complete Feature Guide — Oordio Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+        <ul class="nav-links">
+          <li><a href="../index.html#how-it-works">How It Works</a></li>
+          <li><a href="../index.html#advantages">Features</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../index.html#testimonials">Testimonials</a></li>
+          <li><a href="https://app.oordio.com" class="nav-cta">Get Started</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="blog-post">
+      <article class="container">
+        <a href="index.html" class="blog-back">← Back to Blog</a>
+        <header class="blog-post-header">
+          <span class="blog-category blog-category-guides">Guides</span>
+          <h1>What Oordio Can Do: The Complete Feature Guide</h1>
+          <p class="blog-post-meta">Everything you need to know about Oordio's capabilities for hosts and cleaners</p>
+        </header>
+
+        <div class="blog-post-body">
+          <p>Oordio is a landlord–cleaner coordination platform built specifically for short-term rental operators. It connects your bookings, cleaners, payments, and schedules into one automated system—so you can stop chasing people by text and start running your rentals with confidence. Here's a detailed breakdown of everything Oordio can do.</p>
+
+          <h2>1. Booking Ingestion & Sync</h2>
+          <p>Oordio automatically detects when bookings are confirmed and creates cleaning jobs without manual data entry.</p>
+          <ul>
+            <li><strong>Airbnb webhook integration</strong> — When a booking is confirmed on Airbnb, Oordio ingests it via webhook and creates a job immediately. Checkout time (<code>end_at</code>) drives the assignment timeline.</li>
+            <li><strong>iCal feed sync</strong> — For Airbnb, VRBO, Booking.com, and Agoda, you can add your property's iCal URL. Oordio syncs the feed periodically, detects new checkouts, and creates jobs. Supports multiple platforms per property.</li>
+            <li><strong>Manual import</strong> — For direct bookings or other sources, you can add bookings manually. Oordio still creates jobs and runs the full assignment flow.</li>
+          </ul>
+          <p>Jobs are created as soon as a booking reaches <strong>CONFIRMED</strong> status and checkout time is available. No spreadsheets, no copy-paste.</p>
+
+          <h2>2. Relationship-First Assignment Ladder</h2>
+          <p>Oordio assigns cleaners in a strict priority order—your people first, marketplace as fallback.</p>
+          <ol>
+            <li><strong>Primary cleaner</strong> — Your main cleaner per property. Oordio offers the job to them first with a time-limited acceptance window.</li>
+            <li><strong>Backup cleaner</strong> — If primary declines or doesn't respond in time, the job is offered to your backup. Same flow, shorter window.</li>
+            <li><strong>Marketplace</strong> — If both are unavailable and marketplace is enabled, Oordio creates a marketplace posting. Cleaners can browse and bid; you review and accept.</li>
+            <li><strong>Unassigned</strong> — If all options are exhausted, Oordio notifies you once so you can intervene manually.</li>
+          </ol>
+          <p>Each step is automated. You don't have to text anyone or move jobs between spreadsheets.</p>
+
+          <h2>3. Dynamic Acceptance Windows</h2>
+          <p>Oordio adjusts how long cleaners have to accept based on urgency. Every offer must expire at least <strong>48 hours before checkout</strong> so you always have time to escalate.</p>
+          <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+            <thead>
+              <tr style="background: var(--color-surface, #f8fafc);">
+                <th style="padding: 0.5rem; text-align: left;">Stage</th>
+                <th style="padding: 0.5rem; text-align: left;">When checkout &gt; 48h away</th>
+                <th style="padding: 0.5rem; text-align: left;">Urgent (≤48h)</th>
+                <th style="padding: 0.5rem; text-align: left;">Same-day</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding: 0.5rem;">Primary</td><td style="padding: 0.5rem;">48 hours</td><td style="padding: 0.5rem;">4 hours</td><td style="padding: 0.5rem;">60 min</td></tr>
+              <tr><td style="padding: 0.5rem;">Backup</td><td style="padding: 0.5rem;">24 hours</td><td style="padding: 0.5rem;">2 hours</td><td style="padding: 0.5rem;">30 min</td></tr>
+              <tr><td style="padding: 0.5rem;">Marketplace</td><td style="padding: 0.5rem;">12 hours</td><td style="padding: 0.5rem;">60 min</td><td style="padding: 0.5rem;">20 min</td></tr>
+            </tbody>
+          </table>
+          <p>Per-property overrides let you tune these windows. The minimum is always 15 minutes—cleaners always get time to respond.</p>
+
+          <h2>4. Smart Reminders (No Spam)</h2>
+          <p>Oordio sends push notifications to cleaners at strategic points so they don't miss offers:</p>
+          <ul>
+            <li><strong>1 notification</strong> when the offer is sent</li>
+            <li><strong>Up to 3 reminders</strong> spaced across the window: 50%, 75%, and 90% elapsed (skipped for very short windows)</li>
+            <li><strong>Max 4 notifications</strong> per job per cleaner—no spam</li>
+            <li><strong>Silent expiration</strong> — no "offer expired" ping; Oordio just moves to the next step</li>
+          </ul>
+
+          <h2>5. Per-Booking Cleaning Checklists</h2>
+          <p>Standardize quality across your portfolio with digital checklists.</p>
+          <ul>
+            <li>Define checklist templates per property (e.g. "Standard Turnaround", "Deep Clean")</li>
+            <li>Cleaners see the checklist in the app when they accept a job</li>
+            <li>Check off items as they complete them</li>
+            <li>Photo verification for key items (optional)</li>
+          </ul>
+          <p>Guests get consistent quality; you get peace of mind without micromanaging.</p>
+
+          <h2>6. Interval Cleanings</h2>
+          <p>For longer stays, Oordio can schedule recurring cleanings between bookings. Enable interval cleanings per property and set the frequency (e.g. every 7 days). Oordio creates jobs automatically so the property stays fresh even during multi-week stays.</p>
+
+          <h2>7. Booking Time Changes</h2>
+          <p>When checkout time changes by <strong>30 minutes or more</strong>, Oordio:</p>
+          <ol>
+            <li>Notifies the assigned cleaner to reconfirm (60-minute window)</li>
+            <li>If they decline, restarts the flow at backup or marketplace</li>
+            <li>If there's a pending offer, cancels it and restarts with the new time</li>
+          </ol>
+          <p>No stale assignments. No confusion about when to show up.</p>
+
+          <h2>8. Payments & Payouts (Stripe)</h2>
+          <p>Oordio integrates with Stripe for end-to-end payment handling:</p>
+          <ul>
+            <li><strong>Auto capture</strong> — When a job is marked complete, Oordio can automatically capture the payment from the guest/host</li>
+            <li><strong>Auto payouts</strong> — Funds are transferred to the cleaner's connected Stripe account after job completion</li>
+            <li><strong>Ledger & tracking</strong> — See who's been paid, what's pending, and export for accounting</li>
+          </ul>
+          <p>Cleaners get paid on time without invoicing. Hosts avoid manual payment runs.</p>
+
+          <h2>9. Unified Calendar & Dashboard</h2>
+          <p>One view for your entire operation:</p>
+          <ul>
+            <li>Bookings from all sources (Airbnb, VRBO, iCal, manual) in one calendar</li>
+            <li>Cleaning status alongside occupancy: Pending → Offered → Accepted → In Progress → Completed</li>
+            <li>Portfolio dashboards with hygiene metrics, assignment funnel (primary/backup/marketplace), and occupancy insights</li>
+          </ul>
+
+          <h2>10. Role-Based Access</h2>
+          <p>Oordio has two roles with strict data scoping:</p>
+          <ul>
+            <li><strong>Landlord</strong> — Full CRUD on their properties, bookings, jobs. Can invite cleaners, manage subscriptions, view analytics.</li>
+            <li><strong>Cleaner</strong> — Sees only assigned properties, bookings, and jobs. No access to other hosts' data or financials.</li>
+          </ul>
+          <p>Row-level security (RLS) enforces this in the database. Cleaners never see your full portfolio.</p>
+
+          <h2>11. Web & Mobile Apps</h2>
+          <p>Oordio runs on:</p>
+          <ul>
+            <li><strong>Web</strong> — app.oordio.com. Use it from any browser.</li>
+            <li><strong>iOS & Android</strong> — Native apps via Expo. Push notifications, GPS check-ins, offline-friendly where possible.</li>
+          </ul>
+          <p>Same account, same data. Hosts can monitor from a laptop; cleaners can accept jobs and manage routes from their phone.</p>
+
+          <h2>12. Event Logging & Audit Trail</h2>
+          <p>Every assignment event is logged: OFFER_SENT, REMINDER_SENT, ACCEPTED, DECLINED, EXPIRED, ESCALATED, REASSIGNED, UNASSIGNED, HOST_NOTIFIED, BOOKING_CHANGED, RECONFIRM_REQUESTED. You can trace exactly what happened and when.</p>
+
+          <h2>Summary: What Oordio Can Do</h2>
+          <p>Oordio automates the full lifecycle: <strong>booking → job → offer → accept → complete → pay</strong>. It syncs with your calendars, assigns cleaners in priority order, sends smart reminders, handles time changes, and processes payments. You get a unified dashboard and audit trail; cleaners get clear jobs and on-time payouts. The result: less manual coordination, fewer missed turnarounds, and more time for guest experience and growth.</p>
+        </div>
+
+        <footer class="blog-post-footer">
+          <a href="index.html" class="btn btn-secondary">More Articles</a>
+          <a href="https://app.oordio.com" class="btn btn-primary">Get Started with Oordio</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+          <p class="footer-tagline">Free your time with next-gen rental cleaning coordination.</p>
+          <div class="footer-links">
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#advantages">Features</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="index.html">Blog</a>
+            <a href="https://app.oordio.com">Get Started</a>
+          </div>
+          <p class="footer-copy">&copy; Oordio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

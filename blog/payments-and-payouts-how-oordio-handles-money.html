@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How Oordio handles payments and payouts: Stripe integration, auto capture, auto payouts to cleaners, and payment tracking." />
+    <title>Payments & Payouts: How Oordio Handles the Money — Oordio Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+        <ul class="nav-links">
+          <li><a href="../index.html#how-it-works">How It Works</a></li>
+          <li><a href="../index.html#advantages">Features</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../index.html#testimonials">Testimonials</a></li>
+          <li><a href="https://app.oordio.com" class="nav-cta">Get Started</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="blog-post">
+      <article class="container">
+        <a href="index.html" class="blog-back">← Back to Blog</a>
+        <header class="blog-post-header">
+          <span class="blog-category blog-category-guides">Guides</span>
+          <h1>Payments & Payouts: How Oordio Handles the Money</h1>
+          <p class="blog-post-meta">From job completion to cleaner payment—Stripe-powered automation</p>
+        </header>
+
+        <div class="blog-post-body">
+          <p>Paying cleaners manually—tracking invoices, sending bank transfers, chasing receipts—is tedious and error-prone. Oordio integrates with Stripe to automate the full payment flow: capture from the host when a job completes, transfer to the cleaner's connected account, and keep a clear ledger for your records. Here's how it works.</p>
+
+          <h2>The Payment Flow</h2>
+          <p>Oordio's payment flow is tied to job completion:</p>
+          <ol>
+            <li><strong>Job is created</strong> — From a booking (Airbnb, iCal, manual). Oordio knows the property, checkout time, and assigned cleaner.</li>
+            <li><strong>Cleaner completes the job</strong> — They mark items on the checklist, optionally upload photos, and mark the job complete.</li>
+            <li><strong>Host approves</strong> — (Optional, depending on your setup.) You confirm the job is done.</li>
+            <li><strong>Auto capture</strong> — Oordio captures the payment from your Stripe account (or the guest's, depending on your setup). Funds are held by Stripe.</li>
+            <li><strong>Auto payout</strong> — Oordio transfers the cleaner's portion to their connected Stripe account. They get paid without invoicing.</li>
+          </ol>
+
+          <h2>Stripe Connect</h2>
+          <p>Oordio uses Stripe Connect so cleaners can receive payouts directly. Cleaners connect their Stripe account (or bank details via Stripe) to Oordio. When a job is completed and approved, the transfer is initiated automatically. No manual bank transfers, no "I'll send it when I get a chance."</p>
+
+          <h2>What's Automated</h2>
+          <ul>
+            <li><strong>Auto payment capture</strong> — When checkout completes, Oordio captures the agreed amount. No manual "charge now" step.</li>
+            <li><strong>Auto payouts to cleaner</strong> — Funds are transferred to the cleaner's connected account after job completion. Available on Starter, Pro, and Business plans.</li>
+          </ul>
+          <p>On the Free tier, you manage payments manually. Upgrade to Starter or above for full automation.</p>
+
+          <h2>Oordio Ledger & Tracking</h2>
+          <p>Oordio keeps a ledger of all payment activity per job:</p>
+          <ul>
+            <li>Who was paid, when, and how much</li>
+            <li>Pending captures and payouts</li>
+            <li>Transfer status (pending, completed, failed)</li>
+          </ul>
+          <p>On the Business plan, you get <strong>financial exports</strong>—invoices and reports for accounting. Export for your bookkeeper or tax prep.</p>
+
+          <h2>Subscription Plans & Payment Features</h2>
+          <p>Payment automation is tied to your Oordio subscription:</p>
+          <ul>
+            <li><strong>Free</strong> — Manual payment only. No auto capture or auto payout.</li>
+            <li><strong>Starter</strong> — Auto capture and auto payout. Up to 3 properties.</li>
+            <li><strong>Pro</strong> — Same as Starter, plus backup assignment, marketplace, interval cleanings, analytics. Up to 10 properties.</li>
+            <li><strong>Business</strong> — Everything in Pro plus unlimited properties, multi-user access, financial exports, API access.</li>
+          </ul>
+
+          <h2>Security & Compliance</h2>
+          <p>Stripe handles all card data and bank details. Oordio never stores card numbers. Payments are processed through Stripe's secure infrastructure; you and your cleaners get the same protection as any Stripe-powered business.</p>
+
+          <h2>Why This Matters for Hosts</h2>
+          <p>Manual payment runs are time-consuming and easy to forget. Cleaners who have to chase payment are less likely to prioritize your jobs. With Oordio's auto capture and payout, you set a payment method once; the system handles the rest. Cleaners get paid on time, you get a clear audit trail, and you spend zero time on payment admin.</p>
+
+          <h2>Why This Matters for Cleaners</h2>
+          <p>Cleaners often have to invoice, wait, and follow up. With Oordio, payment is automatic once the job is complete. Connect your Stripe account, do the job, get paid. No invoicing, no chasing. You can focus on doing great work instead of managing money.</p>
+        </div>
+
+        <footer class="blog-post-footer">
+          <a href="index.html" class="btn btn-secondary">More Articles</a>
+          <a href="https://app.oordio.com" class="btn btn-primary">Get Started with Oordio</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+          <p class="footer-tagline">Free your time with next-gen rental cleaning coordination.</p>
+          <div class="footer-links">
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#advantages">Features</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="index.html">Blog</a>
+            <a href="https://app.oordio.com">Get Started</a>
+          </div>
+          <p class="footer-copy">&copy; Oordio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

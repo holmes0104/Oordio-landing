@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How Oordio's relationship-first assignment ladder works: primary, backup, marketplace, and dynamic acceptance windows." />
+    <title>How the Oordio Assignment Ladder Works — Oordio Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+        <ul class="nav-links">
+          <li><a href="../index.html#how-it-works">How It Works</a></li>
+          <li><a href="../index.html#advantages">Features</a></li>
+          <li><a href="../index.html#pricing">Pricing</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../index.html#testimonials">Testimonials</a></li>
+          <li><a href="https://app.oordio.com" class="nav-cta">Get Started</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="blog-post">
+      <article class="container">
+        <a href="index.html" class="blog-back">← Back to Blog</a>
+        <header class="blog-post-header">
+          <span class="blog-category blog-category-strategy">Strategy</span>
+          <h1>How the Oordio Assignment Ladder Works</h1>
+          <p class="blog-post-meta">A deep dive into the relationship-first automation that keeps your turnarounds covered</p>
+        </header>
+
+        <div class="blog-post-body">
+          <p>When a guest checks out, you need a cleaner—fast. The old way: text your primary, wait, maybe text a backup, wait again. The Oordio way: the system offers the job in a strict priority order, escalates automatically when someone declines or times out, and notifies you only when human intervention is needed. Here's exactly how it works.</p>
+
+          <h2>The Four-Step Ladder</h2>
+          <p>Oordio uses a <strong>relationship-first assignment ladder</strong>. Your trusted cleaners get first dibs; the marketplace is a fallback, not the default.</p>
+
+          <h3>Step 1: Primary Cleaner</h3>
+          <p>Every property has a <code>primary_cleaner_id</code>. When a job is created (e.g. from a confirmed Airbnb booking), Oordio immediately offers it to this person. They receive a push notification with job details: property, checkout time, checklist. They have a time-limited window to accept or decline.</p>
+          <p>If they <strong>accept</strong> → job is assigned, you're done. If they <strong>decline</strong> or <strong>don't respond in time</strong> → Oordio moves to step 2. No manual handoff.</p>
+
+          <h3>Step 2: Backup Cleaner</h3>
+          <p>If you've set a <code>backup_cleaner_id</code> on the property, Oordio offers the job to them next. Same flow: push notification, acceptance window. The window is typically shorter than primary (e.g. 24 hours vs 48 hours when checkout is more than 48h away) because time is tighter.</p>
+          <p>If they accept → assigned. If they decline or expire → step 3.</p>
+
+          <h3>Step 3: Marketplace</h3>
+          <p>If <code>marketplace_enabled</code> is true on the property, Oordio creates a <strong>marketplace job request</strong>. This is a posting that vetted marketplace cleaners can browse and bid on. You get a notification that a posting was created; you can review bids and accept one. If no one bids or you don't accept in time, Oordio moves to step 4.</p>
+
+          <h3>Step 4: Unassigned</h3>
+          <p>When primary, backup, and marketplace are all exhausted, Oordio marks the job as <strong>unassigned</strong> and notifies you <strong>once</strong>. You can then manually assign a cleaner, find someone outside the system, or adjust the booking. The system doesn't spam you—it escalates to you only when it needs human help.</p>
+
+          <h2>The 48-Hour Hard Deadline</h2>
+          <p>Every offer must expire at least <strong>48 hours (2 days) before checkout</strong>. Why? So that if a cleaner declines or times out, you still have time to escalate to backup or marketplace and get someone confirmed before the guest arrives.</p>
+          <p>When checkout is far away (e.g. 5 days), the primary might get 48 hours to respond. When checkout is in 3 days, the window is capped so it still expires 48h before. When checkout is <em>within</em> 48 hours (urgent), Oordio uses shorter fallback windows: 4 hours for primary, 2 for backup, 60 minutes for marketplace. Same-day turnarounds get even tighter windows (60 min, 30 min, 20 min) but the floor is always 15 minutes—cleaners always get some time to respond.</p>
+
+          <h2>Reminder Strategy</h2>
+          <p>Cleaners are busy. Oordio sends reminders so they don't miss offers:</p>
+          <ul>
+            <li><strong>Offer sent</strong> — 1 push notification when the job is first offered</li>
+            <li><strong>50% elapsed</strong> — First reminder</li>
+            <li><strong>75% elapsed</strong> — Second reminder (skipped if window &lt; 2 hours)</li>
+            <li><strong>90% elapsed</strong> — Third reminder (skipped if window &lt; 4 hours)</li>
+          </ul>
+          <p>For very short windows (&lt; 30 min), only one reminder at 50%. Maximum 4 notifications per job per cleaner. No spam.</p>
+          <p>When an offer expires, Oordio does <strong>not</strong> send an "offer expired" notification. It silently moves to the next step. The cleaner isn't bombarded; the system just escalates.</p>
+
+          <h2>Booking Time Changes</h2>
+          <p>If checkout time changes by 30 minutes or more (guest extends, host adjusts):</p>
+          <ol>
+            <li>If a cleaner is already assigned, Oordio asks them to <strong>reconfirm</strong> with a 60-minute window. If they decline, the flow restarts at backup or marketplace.</li>
+            <li>If an offer is still pending, Oordio cancels it and restarts the flow with the new time.</li>
+          </ol>
+          <p>No stale assignments. No confusion about when to show up.</p>
+
+          <h2>Event Logging</h2>
+          <p>Every step is logged: OFFER_SENT, REMINDER_SENT, ACCEPTED, DECLINED, EXPIRED, ESCALATED, REASSIGNED, UNASSIGNED, HOST_NOTIFIED, BOOKING_CHANGED, RECONFIRM_REQUESTED. You can trace the full history of any job.</p>
+
+          <h2>Why This Matters</h2>
+          <p>The ladder removes the manual back-and-forth. You set primary and backup once; Oordio handles the rest. You get notified only when the system needs you. Cleaners get clear, time-bounded offers with reminders—no ambiguity. The result: fewer missed turnarounds, happier guests, and more time for you to focus on growth.</p>
+        </div>
+
+        <footer class="blog-post-footer">
+          <a href="index.html" class="btn btn-secondary">More Articles</a>
+          <a href="https://app.oordio.com" class="btn btn-primary">Get Started with Oordio</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Oordio — Free your time" class="logo-img" /></a>
+          <p class="footer-tagline">Free your time with next-gen rental cleaning coordination.</p>
+          <div class="footer-links">
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#advantages">Features</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="index.html">Blog</a>
+            <a href="https://app.oordio.com">Get Started</a>
+          </div>
+          <p class="footer-copy">&copy; Oordio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

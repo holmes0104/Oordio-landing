@@ -1,0 +1,63 @@
+{
+  "source": "apps/mobile/lib/services/subscription.ts — DEFAULT_PLANS",
+  "currency": "EUR",
+  "yearlySavingsPercent": 17,
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "description": "Get started with primary auto-assignment and payment automation for up to 3 properties.",
+      "price_monthly_cents": 1900,
+      "price_yearly_cents": 19000,
+      "max_properties": 3,
+      "features": [
+        "Primary auto-assignment",
+        "Assignment reminders",
+        "Auto payment capture",
+        "Auto payouts to cleaner",
+        "Web & mobile app access",
+        "Unified property calendar",
+        "Up to 3 properties"
+      ],
+      "cta": "Start Free Trial",
+      "cta_href": "https://app.oordio.com"
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "description": "Full automation: primary, backup, and marketplace. Interval cleanings and analytics.",
+      "price_monthly_cents": 3900,
+      "price_yearly_cents": 39000,
+      "max_properties": 10,
+      "features": [
+        "Everything in Starter",
+        "Backup assignment ladder",
+        "Marketplace escalation",
+        "Auto reassignment",
+        "Interval cleanings",
+        "Advanced analytics",
+        "Up to 10 properties"
+      ],
+      "cta": "Get Started with Oordio",
+      "cta_href": "https://app.oordio.com",
+      "badge": "Best for Teams"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Everything in Pro plus unlimited properties, team access, exports, and API.",
+      "price_monthly_cents": 9900,
+      "price_yearly_cents": 99000,
+      "max_properties": null,
+      "features": [
+        "Everything in Pro",
+        "Multi-user access",
+        "Financial exports",
+        "API access",
+        "Unlimited properties"
+      ],
+      "cta": "Contact Oordio Sales",
+      "cta_href": "mailto:sales@oordio.com"
+    }
+  ]
+}
